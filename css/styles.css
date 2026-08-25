@@ -1,0 +1,137 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+span {
+  font-weight: bolder;
+}
+.flex {
+  display: flex;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  background-color: #072120;
+  align-items: center;
+  padding-right: 50px;
+  width: 100%;
+}
+
+/* NAVBAR */
+.logo {
+  width: 240px;
+  height: auto;
+}
+ul {
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+nav {
+  background-color: #072120;
+}
+nav a {
+  font-weight: 500;
+  transition: color 0.18s;
+  flex-wrap: wrap;
+}
+
+nav a:hover {
+  color: #946960;
+  text-shadow: 0 0 0.6px currentColor;
+}
+
+ul {
+  display: flex;
+  column-gap: 3rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+nav ul li a {
+  font-variant: small-caps;
+}
+/* ---------------------- */
+
+/* DESPLEGABLE */
+/*Selecciona los bandos, ul de primer nivel*/
+nav ul li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #072120;
+  padding: 0;
+  margin: 0;
+  z-index: 3;
+  min-width: 300px;
+}
+
+/*Selecciona los personajes de cada bando, ul de 2do nivel*/
+nav ul li > ul > li {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+/*Los links de cualquier nivel del dropdown*/
+nav ul li > ul a,
+nav ul li > ul > li a {
+  line-height: 120%;
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  color: #ebd4cb;
+}
+
+/*El 2do nivel de anidamiento se muestra al hacer hover sobre el primer nivel*/
+nav ul li:hover > ul,
+nav ul li:focus-within > ul {
+  display: block;
+}
+
+/* UL que es hijo directo de un li dentro del dropdown */
+nav ul li > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 0; /* para que aparezca justo al mismo nivel que el li padre */
+  left: 100%; /* aparece a la derecha del item */
+  background: #072120;
+  padding: 0;
+  margin: 0;
+  z-index: 4;
+  min-width: 280px;
+}
+
+/* mostrar el sub menú del sub menú al hacer hover en el li padre */
+nav ul li > ul > li:hover > ul,
+nav ul li > ul > li:focus-within > ul {
+  display: block;
+}
+
+/* Los <a> llenan el li para que el hover no se rompa al mover el mouse */
+nav ul li > a,
+nav ul li > ul li > a {
+  display: block;
+  padding: 10px 15px;
+}
+
+/* ---------------------- */
+a {
+  text-decoration: none;
+  color: #ebd4cb;
+}
