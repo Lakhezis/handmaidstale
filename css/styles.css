@@ -11,6 +11,7 @@ body {
   padding: 0;
   width: 100%;
   box-sizing: border-box;
+  font-variant: small-caps;
 }
 span {
   font-weight: bolder;
@@ -63,9 +64,7 @@ ul {
 nav ul li {
   position: relative;
 }
-nav ul li a {
-  font-variant: small-caps;
-}
+
 /* ---------------------- */
 
 /* DESPLEGABLE */
@@ -75,7 +74,7 @@ nav ul li > ul {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #072120;
+  background: #072120d8;
   padding: 0;
   margin: 0;
   z-index: 3;
@@ -110,7 +109,7 @@ nav ul li > ul > li > ul {
   position: absolute;
   top: 0; /* para que aparezca justo al mismo nivel que el li padre */
   left: 100%; /* aparece a la derecha del item */
-  background: #072120;
+  background: #072120d8;
   padding: 0;
   margin: 0;
   z-index: 4;
@@ -134,4 +133,42 @@ nav ul li > ul li > a {
 a {
   text-decoration: none;
   color: #ebd4cb;
+}
+
+/*---- sección Hero-----*/
+.hero {
+  background-image: url("../imagenes/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 520px;
+}
+h1,
+h2,
+button {
+  margin-left: 100px;
+}
+.titulo {
+  font-size: 72px;
+  color: #ebd4cb;
+  width: 350px;
+}
+.subtitulo {
+  color: #b0c4c4;
+  text-shadow: #072120 2px 2px 2px;
+}
+button {
+  margin-top: 30px;
+  margin-left: 100px;
+  background-color: #97061ee0;
+  color: #ebd4cb;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-variant: small-caps;
+}
+.explora-gilead:hover {
+  text-shadow: 0 0 1px currentColor;
+  background-color: #890620;
 }
