@@ -19,10 +19,12 @@ span {
 .flex {
   display: flex;
 }
-
 header {
   position: sticky;
   top: 0;
+}
+header,
+footer {
   justify-content: space-between;
   background-color: #072120;
   align-items: center;
@@ -158,7 +160,8 @@ button {
 }
 
 .explora-gilead,
-.ver-todos {
+.ver-todos,
+.aspectos {
   margin-top: 30px;
   margin-left: 100px;
   background-color: #97061ee0;
@@ -170,7 +173,8 @@ button {
   font-variant: small-caps;
 }
 .explora-gilead:hover,
-.ver-todos:hover {
+.ver-todos:hover,
+.aspectos:hover {
   text-shadow: 0 0 1px currentColor;
   background-color: #890620;
 }
@@ -310,4 +314,83 @@ button {
 .ver-todos {
   margin: auto;
   margin-top: 30px;
+}
+.gilead {
+  width: 100%;
+  min-height: 350px;
+  background-image:
+    linear-gradient(to right, #ffffff00, #ffffff00, #072120, #072120),
+    url("../imagenes/gilead.jpg");
+  padding: 10px;
+  background-size: cover;
+  background-position: left center;
+}
+.gilead-texto {
+  align-self: flex-end;
+  width: 30%;
+  margin-left: 70%;
+  margin-top: 20px;
+  color: #ebd4cb;
+}
+.gilead-texto > h2 {
+  margin: 0 0 1rem 0;
+}
+.gilead-texto > h3 {
+  font-size: 18px;
+  margin: 0;
+  text-shadow: 2px 2px 2px #072120;
+  color: #b0c4c4;
+}
+.gilead-texto > .linea {
+  border-bottom: 1px solid #b0c4c4;
+}
+.gilead-texto > p {
+  font-variant: normal;
+  font-size: 18px;
+  margin-top: 2rem;
+}
+.gilead-texto > .aspectos {
+  margin: 4rem 0 0 0;
+}
+
+/*EXTRAIDO DE LA PAGINA DE AVATAR, MANEJAR CON CUIDADO*/
+footer {
+  flex-direction: column;
+  padding: 10px;
+  z-index: 1000;
+}
+footer div:first-child {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+footer a img {
+  width: 50px;
+  height: auto;
+  transition: 0.4s;
+  color: #072120;
+  padding: 3px;
+}
+footer a img:hover {
+  background-color: #003737;
+  border: #003737 solid 3px;
+  border-radius: 50%;
+}
+
+.texto-pie {
+  font-variant: normal;
+  color: #ebd4cb;
+  font-size: 18px;
+  margin-left: 1.5rem;
+  margin-right: 1rem;
+}
+.licencia {
+  align-items: center;
+  margin-top: 20px;
+}
+.licencia img {
+  margin-left: 10px;
+  margin-top: -15px;
+  width: 120px;
+  vertical-align: middle;
 }
