@@ -1,7 +1,7 @@
-/*PÁGINA DE INICIO - NAVBAR Y FOOTER*/
+/* ===== RESET Y BASE ===== */
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 body {
@@ -11,7 +11,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  box-sizing: border-box;
   font-variant: small-caps;
 }
 span {
@@ -20,6 +19,21 @@ span {
 .flex {
   display: flex;
 }
+a {
+  text-decoration: none;
+  color: #ebd4cb;
+}
+ul {
+  list-style-type: none;
+  flex-wrap: wrap;
+  display: flex;
+  column-gap: 3rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== HEADER / FOOTER ===== */
 header {
   position: sticky;
   top: 0;
@@ -32,16 +46,20 @@ footer {
   padding-right: 50px;
   width: 100%;
 }
-
-/* NAVBAR */
+header {
+  display: flex;
+}
+footer {
+  flex-direction: column;
+  padding: 10px;
+  z-index: 1000;
+}
 .logo {
   width: 240px;
   height: auto;
 }
-ul {
-  list-style-type: none;
-  flex-wrap: wrap;
-}
+
+/* ===== NAVEGACIÓN ===== */
 nav {
   background-color: #072120;
 }
@@ -50,28 +68,14 @@ nav a {
   transition: color 0.18s;
   flex-wrap: wrap;
 }
-
 nav a:hover {
   color: #946960;
   text-shadow: 0 0 0.6px currentColor;
 }
-
-ul {
-  display: flex;
-  column-gap: 3rem;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
 nav ul li {
   position: relative;
 }
-
-/* ---------------------- */
-
-/* DESPLEGABLE */
-/*Selecciona los bandos, ul de primer nivel*/
+/* Dropdowns */
 nav ul li > ul {
   display: none;
   position: absolute;
@@ -82,15 +86,14 @@ nav ul li > ul {
   margin: 0;
   z-index: 3;
   min-width: 300px;
+  flex-direction: column;
+  column-gap: 0;
 }
-
-/*Selecciona los personajes de cada bando, ul de 2do nivel*/
 nav ul li > ul > li {
   width: 100%;
   display: block;
   position: relative;
 }
-/*Los links de cualquier nivel del dropdown*/
 nav ul li > ul a,
 nav ul li > ul > li a {
   line-height: 120%;
@@ -99,46 +102,88 @@ nav ul li > ul > li a {
   text-decoration: none;
   color: #ebd4cb;
 }
-
-/*El 2do nivel de anidamiento se muestra al hacer hover sobre el primer nivel*/
 nav ul li:hover > ul,
 nav ul li:focus-within > ul {
   display: block;
 }
-
-/* UL que es hijo directo de un li dentro del dropdown */
 nav ul li > ul > li > ul {
   display: none;
   position: absolute;
-  top: 0; /* para que aparezca justo al mismo nivel que el li padre */
-  left: 100%; /* aparece a la derecha del item */
+  top: 0;
+  left: 100%;
   background: #072120d8;
   padding: 0;
   margin: 0;
   z-index: 4;
   min-width: 280px;
+  flex-direction: column;
+  column-gap: 0;
 }
-
-/* mostrar el sub menú del sub menú al hacer hover en el li padre */
 nav ul li > ul > li:hover > ul,
 nav ul li > ul > li:focus-within > ul {
   display: block;
 }
-
-/* Los <a> llenan el li para que el hover no se rompa al mover el mouse */
 nav ul li > a,
 nav ul li > ul li > a {
   display: block;
   padding: 10px 15px;
 }
 
-/* ---------------------- */
-a {
-  text-decoration: none;
+/* ===== BOTONES (agrupados) ===== */
+.explora-gilead,
+.ver-todos,
+.aspectos {
+  margin-top: 30px;
+  margin-left: 100px;
+  background-color: #97061ee0;
   color: #ebd4cb;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  font-variant: small-caps;
+}
+.explora-gilead:hover,
+.ver-todos:hover,
+.aspectos:hover {
+  text-shadow: 0 0 1px currentColor;
+  background-color: #890620;
 }
 
-/*---- sección Hero-----*/
+.saber-mas {
+  margin-top: 30px;
+  margin-left: 100px;
+  background-color: #ebd4cb;
+  border: 1px solid #97061ee0;
+  color: #97061ee0;
+  font-size: 1.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  font-variant: small-caps;
+}
+.saber-mas:hover {
+  text-shadow: 0 0 1px currentColor;
+  color: #890620;
+  border: 1px solid #890620;
+  background-color: #c79d94;
+}
+
+.ver-perfil {
+  background-color: #ebd4cb;
+  border: none;
+  color: #97061ee0;
+  font-size: 1rem;
+  cursor: pointer;
+  font-variant: small-caps;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.ver-perfil:hover {
+  text-shadow: 0 0 1px #072120;
+  color: #890620;
+}
+
+/* ===== HERO (index) ===== */
 .hero {
   background-image: url("../imagenes/hero.jpg");
   background-size: cover;
@@ -160,72 +205,31 @@ button {
   text-shadow: #003737 2px 2px 2px;
 }
 
-.explora-gilead,
-.ver-todos,
-.aspectos {
-  margin-top: 30px;
-  margin-left: 100px;
-  background-color: #97061ee0;
-  color: #ebd4cb;
-  font-size: 1.5rem;
-  padding: 1rem;
-  border: none;
-  cursor: pointer;
-  font-variant: small-caps;
-}
-.explora-gilead:hover,
-.ver-todos:hover,
-.aspectos:hover {
-  text-shadow: 0 0 1px currentColor;
-  background-color: #890620;
-}
-
-/*SECCION CONTENIDO*/
+/* ===== SECCIÓN CONTENIDO ===== */
 .contenido {
   background-color: #ebd4cb;
   padding: 10px;
   display: flex;
   justify-content: space-between;
 }
-.saber-mas {
-  margin-top: 30px;
-  margin-left: 100px;
-  background-color: #ebd4cb;
-  border: 1px solid #97061ee0;
-  color: #97061ee0;
-  font-size: 1.5rem;
-  padding: 1rem;
-  cursor: pointer;
-  font-variant: small-caps;
-}
-.saber-mas:hover {
-  text-shadow: 0 0 1px currentColor;
-  color: #890620;
-  border: 1px solid #890620;
-  background-color: #c79d94;
-}
-.contenido-texto > h3,
-.personajes-texto > h3 {
+.contenido-texto h3 {
   color: #890620;
   margin: 20px 100px;
   font-size: 20px;
 }
-
-.linea {
+.contenido-texto .linea {
   border-bottom: 1px solid #890620;
   width: 50px;
-}
-.contenido-texto > .linea {
   margin-left: 100px;
   margin-top: -20px;
   margin-bottom: 20px;
 }
-.contenido-texto > h2 {
+.contenido-texto h2 {
   color: #072120;
   margin: 20px 100px;
   font-size: 24px;
 }
-.contenido-texto > p {
+.contenido-texto p {
   color: #072120;
   margin: 20px 100px;
   font-variant: normal;
@@ -236,39 +240,41 @@ button {
   height: auto;
   margin-right: 100px;
 }
-.contenido-imagen > img {
+.contenido-imagen img {
   margin-top: 20px;
   width: 110%;
   height: auto;
 }
 
-/*SECCION PERSONAJES*/
+/* ===== SECCIÓN PERSONAJES ===== */
 .personajes {
   text-align: center;
   background-color: #c79d94;
   padding-top: 20px;
   padding-bottom: 10px;
 }
-
 .personajes-texto {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
 }
-
-.personajes-texto > h2 {
+.personajes-texto h3 {
+  color: #890620;
+  margin: 20px 100px;
+  font-size: 20px;
+}
+.personajes-texto .linea {
+  width: 60px;
+  border-bottom: 1px solid #890620;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+.personajes-texto h2 {
   color: #072120;
   font-size: 24px;
   margin: 0 0 10px 0;
 }
-.personajes-texto > .linea {
-  width: 60px;
-  background-color: #890620;
-  margin-top: -20px;
-  margin-bottom: 20px;
-}
-
 .personajes-imagen {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
@@ -277,7 +283,6 @@ button {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .personaje {
   display: flex;
   flex-direction: column;
@@ -285,37 +290,22 @@ button {
   text-align: center;
   background-color: #ebd4cb;
 }
-.personaje > img {
+.personaje img {
   width: 180px;
   height: 180px;
   object-fit: cover;
   margin-bottom: 12px;
 }
-
-.personaje > h3 {
+.personaje h3 {
   color: #072120;
   font-size: 18px;
-}
-
-.ver-perfil {
-  background-color: #ebd4cb;
-  border: none;
-  color: #97061ee0;
-  font-size: 1rem;
-  /*padding: 0.5rem;*/
-  cursor: pointer;
-  font-variant: small-caps;
-  margin: auto;
-  margin-bottom: 10px;
-}
-.ver-perfil:hover {
-  text-shadow: 0 0 1px #072120;
-  color: #890620;
 }
 .ver-todos {
   margin: auto;
   margin-top: 30px;
 }
+
+/* ===== SECCIÓN GILEAD ===== */
 .gilead {
   width: 100%;
   min-height: 350px;
@@ -333,53 +323,50 @@ button {
   margin-top: 20px;
   color: #ebd4cb;
 }
-.gilead-texto > h2 {
+.gilead-texto h2 {
   margin: 0 0 1rem 0;
 }
-.gilead-texto > h3 {
+.gilead-texto h3 {
   font-size: 18px;
   margin: 0;
   text-shadow: 2px 2px 2px #072120;
   color: #b0c4c4;
 }
-.gilead-texto > .linea {
+.gilead-texto .linea {
   border-bottom: 1px solid #b0c4c4;
 }
-.gilead-texto > p {
+.gilead-texto p {
   font-variant: normal;
   font-size: 18px;
   margin-top: 2rem;
 }
-.gilead-texto > .aspectos {
+.gilead-texto .aspectos {
   margin: 4rem 0 0 0;
 }
 
-/*SECCION DE NOVEDADES*/
+/* ===== SECCIÓN NOVEDADES ===== */
 .novedades {
   text-align: center;
   background-color: #ebd4cb;
   padding-top: 20px;
   padding-bottom: 10px;
 }
-
 .novedades-texto {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
 }
-
-.novedades-texto > h3 {
+.novedades-texto h3 {
   color: #890620;
   font-size: 24px;
   margin: 0 0 10px 0;
 }
-.novedades-texto > .linea {
+.novedades-texto .linea {
   width: 60px;
-  background-color: #890620;
+  border-bottom: 1px solid #890620;
   margin-bottom: 20px;
 }
-
 .novedades-imagen {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
@@ -387,48 +374,30 @@ button {
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #ebd4cb;
+  padding-bottom: 10px;
 }
-
 .noticia {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   background-color: #ebd4cb;
-  border: #003737 1px solid;
+  border: 1px solid #003737;
 }
-.noticia > img {
+.noticia img {
   width: 300px;
   height: 180px;
   object-fit: cover;
   margin-bottom: 14px;
 }
-
-.noticia > h3 {
+.noticia h3 {
   color: #072120;
   font-size: 18px;
   font-variant: normal;
 }
 
-.novedades-imagen {
-  text-align: center;
-  background-color: #ebd4cb;
-  padding-bottom: 10px;
-}
-
-.novedades-texto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-/*EXTRAIDO DE LA PAGINA DE AVATAR, MANEJAR CON CUIDADO*/
-footer {
-  flex-direction: column;
-  padding: 10px;
-  z-index: 1000;
-}
+/* ===== FOOTER ===== */
 footer div:first-child {
   display: flex;
   gap: 20px;
@@ -438,15 +407,13 @@ footer a img {
   width: 50px;
   height: auto;
   transition: 0.4s;
-  color: #072120;
   padding: 3px;
 }
 footer a img:hover {
   background-color: #003737;
-  border: #003737 solid 3px;
+  border: 3px solid #003737;
   border-radius: 50%;
 }
-
 .texto-pie {
   font-variant: normal;
   color: #ebd4cb;
@@ -455,6 +422,7 @@ footer a img:hover {
   margin-right: 1rem;
 }
 .licencia {
+  display: flex;
   align-items: center;
   margin-top: 20px;
 }
@@ -464,8 +432,8 @@ footer a img:hover {
   width: 120px;
   vertical-align: middle;
 }
-/*-----------------------------------------------------------------*/
-/*PÁGINA - LA SERIE*/
+
+/* ===== PÁGINA "LA SERIE" ===== */
 .hero-serie {
   background-image: url("../imagenes/la-serie-hero.jpg");
   background-size: cover;
@@ -480,21 +448,24 @@ footer a img:hover {
   width: 100%;
   background-color: #ebd4cb;
   margin-bottom: -8px;
+  display: flex;
 }
 .texto-la-serie {
   width: 60%;
 }
-.texto-la-serie > h3 {
+.texto-la-serie h3 {
   color: #890620;
   margin: 30px 100px;
   font-size: 24px;
 }
-.texto-la-serie > .linea {
+.texto-la-serie .linea {
+  border-bottom: 1px solid #890620;
+  width: 50px;
   margin-left: 100px;
   margin-top: -20px;
   margin-bottom: 40px;
 }
-.texto-la-serie > p {
+.texto-la-serie p {
   font-variant: normal;
   font-weight: 500;
   color: #072120;
@@ -508,29 +479,368 @@ footer a img:hover {
 .argumento-serie {
   background-color: #c79d94;
   margin-bottom: -8px;
+  display: flex;
 }
-.argumento-serie > .texto-la-serie {
+.argumento-serie .texto-la-serie {
   width: 70%;
 }
-.argumento-serie > .imagen-la-serie {
+.argumento-serie .imagen-la-serie {
   width: 30%;
 }
-.argumento-serie > .imagen-la-serie > img {
+.argumento-serie .imagen-la-serie img {
   width: 100%;
 }
 .cierre-serie {
   height: auto;
   background-color: #b0c4c4;
   padding: 20px;
+  display: flex;
   flex-direction: column;
 }
-.cierre-serie > .texto-la-serie {
+.cierre-serie .texto-la-serie {
   width: 100%;
 }
-.cierre-serie > .imagen-la-serie {
+.cierre-serie .imagen-la-serie {
   margin-left: 100px;
   margin-right: 100px;
 }
-.cierre-serie > .imagen-la-serie > img {
+.cierre-serie .imagen-la-serie img {
   width: 81vw;
+}
+
+/* ===== MENÚ HAMBURGUESA (solo visible en móvil) ===== */
+#menu-toggle {
+  display: none; /* oculto en desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+#menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #ebd4cb;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animación para convertir las rayas en "X" cuando el menú está abierto */
+#menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== MEDIA QUERY PARA MÓVIL (hasta 480px de ancho) ===== */
+@media screen and (max-width: 480px) {
+  /* Mostrar botón hamburguesa */
+  #menu-toggle {
+    display: flex;
+  }
+
+  /* Ocultar el menú por defecto en móvil */
+  #menu_bar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #072120;
+    padding: 1rem 0;
+    z-index: 9;
+  }
+
+  /* Mostrar menú cuando tiene la clase 'active' (añadida por JS) */
+  #menu_bar.active {
+    display: block;
+  }
+
+  /* El menú en móvil: vertical y ocupando todo el ancho */
+  #menu_bar ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+  }
+
+  #menu_bar ul li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(235, 212, 203, 0.2);
+  }
+
+  #menu_bar ul li a {
+    padding: 15px 20px;
+    display: block;
+    font-size: 1.2rem;
+  }
+
+  /* Submenús: se muestran al hacer hover/focus (también funciona con toque en móvil) */
+  nav ul li > ul {
+    position: static;
+    background: #0a2e2d;
+    min-width: 100%;
+    box-shadow: none;
+  }
+
+  nav ul li > ul > li > ul {
+    position: static;
+    background: #0d3a39;
+    min-width: 100%;
+    left: 0;
+  }
+
+  /* Ajustes de textos y márgenes para pantalla pequeña */
+  .titulo {
+    font-size: 2.5rem;
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .subtitulo {
+    margin-left: 20px;
+    font-size: 1.2rem;
+  }
+
+  h1,
+  h2,
+  button {
+    margin-left: 20px;
+  }
+
+  .explora-gilead,
+  .ver-todos,
+  .aspectos,
+  .saber-mas {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    width: calc(100% - 40px);
+    text-align: center;
+  }
+
+  .contenido {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .contenido-texto h3,
+  .contenido-texto h2,
+  .contenido-texto p {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .contenido-texto .linea {
+    margin-left: 20px;
+  }
+
+  .contenido-imagen {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .contenido-imagen img {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .personajes-imagen {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .personaje img {
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+  }
+
+  .gilead-texto {
+    width: 80%;
+    margin-left: 10%;
+    background: rgba(7, 33, 32, 0.85);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .gilead-texto .aspectos {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .novedades-imagen {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .noticia img {
+    width: 100%;
+    height: auto;
+  }
+
+  .texto-la-serie {
+    width: 100%;
+  }
+
+  .texto-la-serie h3,
+  .texto-la-serie p {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .texto-la-serie .linea {
+    margin-left: 20px;
+  }
+
+  .imagen-la-serie {
+    width: 100%;
+  }
+
+  .intro-la-serie,
+  .argumento-serie {
+    flex-direction: column;
+  }
+
+  .argumento-serie .texto-la-serie,
+  .argumento-serie .imagen-la-serie {
+    width: 100%;
+  }
+
+  .cierre-serie .imagen-la-serie {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .cierre-serie .imagen-la-serie img {
+    width: 100%;
+  }
+
+  footer {
+    padding: 10px 5px;
+  }
+
+  footer a img {
+    width: 35px;
+  }
+
+  .texto-pie {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .licencia img {
+    width: 80px;
+  }
+}
+/* ===== PANTALLAS GRANDES (1920px y superiores) ===== */
+@media screen and (min-width: 1920px) {
+  /* Contenedores principales más anchos */
+  .contenido,
+  .personajes-imagen,
+  .novedades-imagen {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Aumentar tamaño de fuentes para mejor legibilidad */
+  .titulo {
+    font-size: 96px;
+    width: 450px;
+  }
+
+  .subtitulo {
+    font-size: 36px;
+  }
+
+  .contenido-texto h2,
+  .personajes-texto h2,
+  .novedades-texto h2 {
+    font-size: 32px;
+  }
+
+  .contenido-texto p,
+  .gilead-texto p,
+  .texto-la-serie p {
+    font-size: 22px;
+  }
+
+  /* Más espacio entre secciones */
+  .hero {
+    height: 680px;
+  }
+
+  .hero-serie {
+    height: 500px;
+  }
+
+  /* Grids con más columnas y mejor distribución */
+  .personajes-imagen {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+  }
+
+  .personaje img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .novedades-imagen {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .noticia img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  /* Ajustes para la página "La Serie" */
+  .intro-la-serie,
+  .argumento-serie {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .texto-la-serie h3 {
+    font-size: 30px;
+  }
+
+  .texto-la-serie p {
+    font-size: 22px;
+  }
+
+  .cierre-serie .imagen-la-serie img {
+    max-width: 1400px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Footer más espacioso */
+  footer a img {
+    width: 60px;
+  }
+
+  .texto-pie {
+    font-size: 20px;
+  }
 }
