@@ -1,3 +1,4 @@
+/*PÁGINA DE INICIO - NAVBAR Y FOOTER*/
 * {
   padding: 0px;
   margin: 0px;
@@ -462,4 +463,74 @@ footer a img:hover {
   margin-top: -15px;
   width: 120px;
   vertical-align: middle;
+}
+/*-----------------------------------------------------------------*/
+/*PÁGINA - LA SERIE*/
+.hero-serie {
+  background-image: url("../imagenes/la-serie-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 380px;
+}
+.titulo-la-serie {
+  padding-top: 40px;
+  padding-left: 40px;
+}
+.intro-la-serie {
+  width: 100%;
+  background-color: #ebd4cb;
+  margin-bottom: -8px;
+}
+.texto-la-serie {
+  width: 60%;
+}
+.texto-la-serie > h3 {
+  color: #890620;
+  margin: 30px 100px;
+  font-size: 24px;
+}
+.texto-la-serie > .linea {
+  margin-left: 100px;
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+.texto-la-serie > p {
+  font-variant: normal;
+  font-weight: 500;
+  color: #072120;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 10px;
+}
+.imagen-la-serie {
+  width: 50%;
+}
+.argumento-serie {
+  background-color: #c79d94;
+  margin-bottom: -8px;
+}
+.argumento-serie > .texto-la-serie {
+  width: 70%;
+}
+.argumento-serie > .imagen-la-serie {
+  width: 30%;
+}
+.argumento-serie > .imagen-la-serie > img {
+  width: 100%;
+}
+.cierre-serie {
+  height: auto;
+  background-color: #b0c4c4;
+  padding: 20px;
+  flex-direction: column;
+}
+.cierre-serie > .texto-la-serie {
+  width: 100%;
+}
+.cierre-serie > .imagen-la-serie {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.cierre-serie > .imagen-la-serie > img {
+  width: 81vw;
 }
