@@ -508,7 +508,7 @@ footer a img:hover {
   width: 81vw;
 }
 
-/* ===== MENÚ HAMBURGUESA (solo visible en móvil) ===== */
+/* ===== MENÚ HAMBURGUESA ===== */
 #menu-toggle {
   display: none; /* oculto en desktop */
   flex-direction: column;
