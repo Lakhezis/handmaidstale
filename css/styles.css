@@ -46,10 +46,9 @@ header {
 }
 header,
 footer {
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #072120;
   align-items: center;
-  padding-right: 4%;
   width: 100%;
 }
 header {
@@ -81,7 +80,40 @@ nav a:hover {
 nav ul li {
   position: relative;
 }
-/* Dropdowns */
+
+css
+/* ---- Dropdowns ---- */
+
+nav ul li {
+  position: relative;
+}
+
+/* Botones que funcionan como elementos del menú */
+
+nav .menu-link,
+nav .submenu-link {
+  background: none;
+  border: none;
+  color: #ebd4cb;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  font-variant: inherit;
+  line-height: normal;
+  cursor: pointer;
+  margin: 0;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+nav .menu-link:hover,
+nav .submenu-link:hover {
+  color: #946960;
+  text-shadow: 0 0 0.6px currentColor;
+}
+
+/* Primer nivel */
+
 nav ul li > ul {
   display: none;
   position: absolute;
@@ -91,27 +123,13 @@ nav ul li > ul {
   padding: 0;
   margin: 0;
   z-index: 10;
-
   flex-direction: column;
-  column-gap: 0;
-}
-nav ul li > ul > li {
-  width: 100%;
-  display: block;
-  position: relative;
-}
-nav ul li > ul a,
-nav ul li > ul > li a {
-  padding: 1% 2%;
-  display: block;
-  text-decoration: none;
-  color: #ebd4cb;
-}
-nav ul li:hover > ul,
-nav ul li:focus-within > ul {
-  display: block;
   min-width: 300px;
+  align-items: flex-start;
 }
+
+/* Segundo nivel */
+
 nav ul li > ul > li > ul {
   display: none;
   position: absolute;
@@ -120,14 +138,88 @@ nav ul li > ul > li > ul {
   background: #072120d8;
   padding: 0;
   margin: 0;
-  z-index: 4;
-  min-width: 5%;
+  z-index: 10;
   flex-direction: column;
+  min-width: 300px;
 }
-nav ul li > ul > li:hover > ul,
-nav ul li > ul > li:focus-within > ul {
+
+/* Links dentro de los dropdowns */
+
+nav ul li > ul a {
+  padding: 10px 15px;
   display: block;
+  color: #ebd4cb;
+  text-decoration: none;
 }
+
+/* Desktop: abrir con hover */
+
+@media screen and (min-width: 481px) {
+  nav .dropdown:hover > ul {
+    display: flex;
+  }
+
+  nav .dropdown-submenu:hover > ul {
+    display: flex;
+  }
+}
+
+/* ---- Dropdowns en celular ---- */
+
+@media screen and (max-width: 480px) {
+  nav ul li > ul {
+    position: static;
+    width: 100%;
+    min-width: 100%;
+    background: #0a2e2d;
+    box-shadow: none;
+  }
+
+  nav ul li > ul > li > ul {
+    position: static;
+    width: 100%;
+    min-width: 100%;
+    background: #0d3a39;
+  }
+
+  /* Ocultos por defecto */
+
+  nav .dropdown > ul,
+  nav .dropdown-submenu > ul {
+    display: none;
+  }
+
+  /* Se muestran cuando JS agrega .open */
+
+  nav .dropdown.open > ul {
+    display: flex;
+  }
+
+  nav .dropdown-submenu.open > ul {
+    display: flex;
+  }
+
+  /* Botones ocupan todo el ancho */
+
+  nav .menu-link,
+  nav .submenu-link {
+    width: 100%;
+    margin: 0;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+
+  /* Links */
+
+  nav ul li > ul a {
+    padding: 15px 20px;
+    display: block;
+    text-align: left;
+    font-size: 1.1rem;
+  }
+}
+
 nav ul li > a,
 nav ul li > ul li > a {
   display: block;
@@ -680,7 +772,7 @@ footer a img:hover {
 
   #menu_bar ul li {
     width: 100%;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid rgba(235, 212, 203, 0.2);
   }
 
@@ -691,19 +783,6 @@ footer a img:hover {
   }
 
   /* Submenús se muestran al hacer hover*/
-  nav ul li > ul {
-    position: static;
-    background: #0a2e2d;
-    min-width: 100%;
-    box-shadow: none;
-  }
-
-  nav ul li > ul > li > ul {
-    position: static;
-    background: #0d3a39;
-    min-width: 100%;
-    left: 0;
-  }
 
   .titulo {
     font-size: 2.5rem;
@@ -732,7 +811,7 @@ footer a img:hover {
     font-size: 1.2rem;
     padding: 0.8rem;
     width: calc(100% - 40px);
-    text-align: center;
+    text-align: left;
   }
   .explora-gilead {
     margin-top: 200px;
