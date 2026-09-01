@@ -1,14 +1,21 @@
+/* ---- Reset CSS ---- */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
 body {
   font-family: "Cormorant Garamond", serif;
   font-size: 24px;
   font-weight: 900;
-  margin: 0;
-  padding: 0;
   width: 100%;
   font-variant: small-caps;
 }
@@ -26,7 +33,7 @@ ul {
   list-style-type: none;
   flex-wrap: wrap;
   display: flex;
-  column-gap: 3rem;
+  column-gap: 2rem;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -42,7 +49,7 @@ footer {
   justify-content: space-between;
   background-color: #072120;
   align-items: center;
-  padding-right: 50px;
+  padding-right: 4%;
   width: 100%;
 }
 header {
@@ -50,7 +57,7 @@ header {
 }
 footer {
   flex-direction: column;
-  padding: 10px;
+  padding: 1%;
   z-index: 10;
 }
 .logo {
@@ -84,7 +91,7 @@ nav ul li > ul {
   padding: 0;
   margin: 0;
   z-index: 10;
-  min-width: 300px;
+
   flex-direction: column;
   column-gap: 0;
 }
@@ -95,8 +102,7 @@ nav ul li > ul > li {
 }
 nav ul li > ul a,
 nav ul li > ul > li a {
-  line-height: 120%;
-  padding: 10px 15px;
+  padding: 1% 2%;
   display: block;
   text-decoration: none;
   color: #ebd4cb;
@@ -104,6 +110,7 @@ nav ul li > ul > li a {
 nav ul li:hover > ul,
 nav ul li:focus-within > ul {
   display: block;
+  min-width: 300px;
 }
 nav ul li > ul > li > ul {
   display: none;
@@ -114,9 +121,8 @@ nav ul li > ul > li > ul {
   padding: 0;
   margin: 0;
   z-index: 4;
-  min-width: 280px;
+  min-width: 5%;
   flex-direction: column;
-  column-gap: 0;
 }
 nav ul li > ul > li:hover > ul,
 nav ul li > ul > li:focus-within > ul {
@@ -184,7 +190,7 @@ nav ul li > ul li > a {
 
 /* ---- hero index ---- */
 .hero {
-  background-image: url("../imagenes/hero.jpg");
+  background-image: url("../imagenes/hero.webp");
   background-size: cover;
   background-position: center;
   height: 520px;
@@ -209,7 +215,6 @@ button {
   background-color: #ebd4cb;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
 }
 .contenido-texto h3 {
   color: #890620;
@@ -235,13 +240,12 @@ button {
   font-weight: 500;
 }
 .contenido-imagen {
-  width: 50%;
+  width: 100%;
   height: auto;
-  margin-right: 100px;
 }
 .contenido-imagen img {
-  margin-top: 20px;
-  width: 110%;
+  margin: 20px 0;
+  width: 90%;
   height: auto;
 }
 
@@ -446,7 +450,6 @@ footer a img:hover {
 .intro-la-serie {
   width: 100%;
   background-color: #ebd4cb;
-  margin-bottom: -8px;
   display: flex;
 }
 .texto-la-serie {
@@ -477,7 +480,6 @@ footer a img:hover {
 }
 .argumento-serie {
   background-color: #c79d94;
-  margin-bottom: -8px;
   display: flex;
 }
 .argumento-serie .texto-la-serie {
@@ -500,11 +502,8 @@ footer a img:hover {
   width: 100%;
 }
 .cierre-serie .imagen-la-serie {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-.cierre-serie .imagen-la-serie img {
-  width: 81vw;
+  width: 85%;
+  margin: auto;
 }
 /*---- PÁGINA PERSONAJES ----*/
 
@@ -859,7 +858,7 @@ footer a img:hover {
   .contenido,
   .personajes-imagen,
   .novedades-imagen {
-    max-width: 1920px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -879,10 +878,16 @@ footer a img:hover {
     font-size: 32px;
   }
 
+  .noticia h3,
+  .noticia h2,
+  .ver-perfil {
+    font-size: 28px;
+  }
+
   .contenido-texto p,
   .gilead-texto p,
   .texto-la-serie p {
-    font-size: 22px;
+    font-size: 32px;
   }
 
   .hero {
@@ -897,21 +902,27 @@ footer a img:hover {
   .personajes-imagen {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
+    margin: 0 30px;
   }
 
   .personaje img {
-    width: 220px;
-    height: 220px;
+    width: 100%;
+    height: auto;
+  }
+
+  .personaje h3 {
+    font-size: 28px;
   }
 
   .novedades-imagen {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+    margin: 0 5%;
   }
 
   .noticia img {
     width: 100%;
-    height: 250px;
+    height: auto;
     object-fit: cover;
   }
 
