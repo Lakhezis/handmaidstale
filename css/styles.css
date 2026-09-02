@@ -505,21 +505,26 @@ button {
 }
 
 /* ---- FOOTER ---- */
-footer div:first-child {
+.redes-sociales {
   display: flex;
   gap: 20px;
   justify-content: center;
 }
-footer a img {
+.redes-sociales a {
+  display: grid;
   width: 50px;
-  height: auto;
-  transition: 0.4s;
-  padding: 3px;
-}
-footer a img:hover {
-  background-color: #003737;
-  border: 3px solid #003737;
+  height: 50px;
+  place-items: center;
   border-radius: 50%;
+  color: #b0c4c4;
+  transition: 0.4s;
+}
+.redes-sociales a:hover {
+  background-color: #003737;
+  color: #b0c4c4;
+}
+.redes-sociales i {
+  font-size: 1.6rem;
 }
 .texto-pie {
   font-variant: normal;
@@ -1126,8 +1131,13 @@ footer a img:hover {
     padding: 10px 5px;
   }
 
-  footer a img {
-    width: 35px;
+  .redes-sociales a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .redes-sociales i {
+    font-size: 1.3rem;
   }
 
   .texto-pie {
@@ -1386,8 +1396,13 @@ footer a img:hover {
     margin: 0 auto;
   }
 
-  footer a img {
+  .redes-sociales a {
     width: 60px;
+    height: 60px;
+  }
+
+  .redes-sociales i {
+    font-size: 1.9rem;
   }
 
   .texto-pie {
