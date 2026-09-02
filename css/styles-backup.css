@@ -5,6 +5,9 @@
   box-sizing: border-box;
 }
 img,
+picture,
+video,
+canvas,
 svg {
   display: block;
   max-width: 100%;
@@ -31,7 +34,7 @@ ul {
   flex-wrap: wrap;
   display: flex;
   column-gap: 2rem;
-  align-items: flex-start;
+  align-items: left;
   margin: 0;
   padding: 0;
 }
@@ -40,7 +43,6 @@ ul {
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
 }
 header,
 footer {
@@ -75,6 +77,11 @@ nav a:hover {
   color: #946960;
   text-shadow: 0 0 0.6px currentColor;
 }
+nav ul li {
+  position: relative;
+}
+
+css
 /* ---- Dropdowns ---- */
 
 nav ul li {
@@ -118,7 +125,7 @@ nav ul li > ul {
   z-index: 10;
   flex-direction: column;
   min-width: 300px;
-  align-items: flex-start;
+  align-items: left;
 }
 
 /* Segundo nivel */
@@ -222,21 +229,16 @@ nav ul li > ul li > a {
 /* ---- Botones ---- */
 .explora-gilead,
 .ver-todos,
-.aspectos,
-.saber-mas {
+.aspectos {
   margin-top: 30px;
   margin-left: 100px;
-  font-size: 1.5rem;
-  padding: 1rem;
-  cursor: pointer;
-  font-variant: small-caps;
-}
-.explora-gilead,
-.ver-todos,
-.aspectos {
   background-color: #97061ee0;
   color: #ebd4cb;
+  font-size: 1.5rem;
+  padding: 1rem;
   border: none;
+  cursor: pointer;
+  font-variant: small-caps;
 }
 .explora-gilead:hover,
 .ver-todos:hover,
@@ -246,9 +248,15 @@ nav ul li > ul li > a {
 }
 
 .saber-mas {
+  margin-top: 30px;
+  margin-left: 100px;
   background-color: #ebd4cb;
   border: 1px solid #97061ee0;
   color: #97061ee0;
+  font-size: 1.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  font-variant: small-caps;
 }
 .saber-mas:hover {
   text-shadow: 0 0 1px currentColor;
@@ -275,6 +283,8 @@ nav ul li > ul li > a {
 /* ---- hero index ---- */
 .hero {
   background-image: url("../imagenes/hero.webp");
+  background-size: cover;
+  background-position: center;
   height: 520px;
 }
 h1,
@@ -292,57 +302,20 @@ button {
   text-shadow: #003737 2px 2px 2px;
 }
 
-.hero,
-.hero-serie,
-.img-sombreada,
-.marquesina,
-.hero-resistencia {
-  background-size: cover;
-  background-position: center;
-}
-
-/* ---- Elementos compartidos de contenido ---- */
-.contenido-texto h3,
-.personajes-texto h3,
-.novedades-texto h3,
-.texto-la-serie h3,
-.intro-pjs h3 {
-  color: #890620;
-  font-size: 24px;
-}
-
-.contenido-texto .linea,
-.personajes-texto .linea,
-.novedades-texto .linea,
-.texto-la-serie .linea,
-.intro-pjs .linea {
-  width: 50px;
-  border-bottom: 1px solid #890620;
-}
-
-.contenido-texto p,
-.texto-la-serie p,
-.intro-pjs p {
-  color: #072120;
-  font-variant: normal;
-  font-weight: 500;
-}
-
 /* ---- Section Contenido ---- */
 .contenido {
   background-color: #ebd4cb;
-  padding: 20px 0;
+  padding: 10px;
   display: flex;
-  align-items: center;
-}
-.contenido-texto,
-.contenido-imagen {
-  width: 50%;
 }
 .contenido-texto h3 {
+  color: #890620;
   margin: 20px 100px;
+  font-size: 24px;
 }
 .contenido-texto .linea {
+  border-bottom: 1px solid #890620;
+  width: 50px;
   margin-left: 100px;
   margin-top: -20px;
   margin-bottom: 20px;
@@ -353,9 +326,13 @@ button {
   font-size: 24px;
 }
 .contenido-texto p {
+  color: #072120;
   margin: 20px 100px;
+  font-variant: normal;
+  font-weight: 500;
 }
 .contenido-imagen {
+  width: 100%;
   height: auto;
 }
 .contenido-imagen img {
@@ -365,27 +342,26 @@ button {
 }
 
 /* ---- section personajes ---- */
-.personajes,
-.novedades {
+.personajes {
   text-align: center;
+  background-color: #c79d94;
   padding-top: 20px;
   padding-bottom: 10px;
 }
-.personajes {
-  background-color: #c79d94;
-}
-.personajes-texto,
-.novedades-texto {
+.personajes-texto {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
 }
 .personajes-texto h3 {
+  color: #890620;
   margin: 20px 100px;
+  font-size: 24px;
 }
 .personajes-texto .linea {
   width: 60px;
+  border-bottom: 1px solid #890620;
   margin-top: -20px;
   margin-bottom: 20px;
 }
@@ -399,7 +375,7 @@ button {
   grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
   justify-content: center;
   gap: 30px;
-  width: min(1200px, calc(100% - 80px));
+  max-width: 1200px;
   margin: 0 auto;
 }
 .personaje {
@@ -465,13 +441,25 @@ button {
 
 /* ---- section Novedades ---- */
 .novedades {
+  text-align: center;
   background-color: #ebd4cb;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.novedades-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
 }
 .novedades-texto h3 {
+  color: #890620;
+  font-size: 24px;
   margin: 0 0 10px 0;
 }
 .novedades-texto .linea {
   width: 60px;
+  border-bottom: 1px solid #890620;
   margin-bottom: 20px;
 }
 .novedades-imagen {
@@ -479,7 +467,7 @@ button {
   grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
   justify-content: center;
   gap: 30px;
-  width: min(1200px, calc(100% - 80px));
+  max-width: 1200px;
   margin: 0 auto;
   background-color: #ebd4cb;
   padding-bottom: 10px;
@@ -543,6 +531,8 @@ footer a img:hover {
 /* ---- PÁGINA - LA SERIE ---- */
 .hero-serie {
   background-image: url("../imagenes/la-serie-hero.jpg");
+  background-size: cover;
+  background-position: center;
   height: 380px;
 }
 .titulo-la-serie {
@@ -553,31 +543,32 @@ footer a img:hover {
   width: 100%;
   background-color: #ebd4cb;
   display: flex;
-  align-items: stretch;
 }
 .texto-la-serie {
   width: 60%;
 }
 .texto-la-serie h3 {
+  color: #890620;
   margin: 30px 100px;
+  font-size: 24px;
 }
 .texto-la-serie .linea {
+  border-bottom: 1px solid #890620;
+  width: 50px;
   margin-left: 100px;
   margin-top: -20px;
   margin-bottom: 40px;
 }
 .texto-la-serie p {
+  font-variant: normal;
+  font-weight: 500;
+  color: #072120;
   margin-left: 100px;
   margin-right: 100px;
   margin-bottom: 10px;
 }
 .imagen-la-serie {
   width: 50%;
-}
-.imagen-la-serie img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 .argumento-serie {
   background-color: #c79d94;
@@ -588,6 +579,9 @@ footer a img:hover {
 }
 .argumento-serie .imagen-la-serie {
   width: 30%;
+}
+.argumento-serie .imagen-la-serie img {
+  width: 100%;
 }
 .cierre-serie {
   height: auto;
@@ -609,6 +603,8 @@ footer a img:hover {
   background-image:
     linear-gradient(to right, #ffffff00, #003737),
     url("../imagenes/esposas_ceremonia_nacimiento.jpg");
+  background-size: cover;
+  background-position: center;
   width: 60%;
   height: 380px;
 }
@@ -634,18 +630,25 @@ footer a img:hover {
 
 .intro-pjs {
   background-color: #ebd4cb;
-  padding: 20px 0;
+  padding: 10px;
 }
 .intro-pjs h3 {
+  color: #890620;
   margin: 20px 100px;
+  font-size: 24px;
 }
 .intro-pjs .linea {
+  border-bottom: 1px solid #890620;
+  width: 50px;
   margin-left: 100px;
   margin-top: -20px;
   margin-bottom: 20px;
 }
 .intro-pjs p {
   margin: 20px 100px;
+  font-variant: normal;
+  font-weight: 500;
+  color: #072120;
 }
 .teal {
   background-color: #003737;
@@ -657,8 +660,6 @@ footer a img:hover {
   padding: 20px 0;
   gap: 50px;
   flex-wrap: wrap;
-  width: min(1200px, calc(100% - 80px));
-  margin: 0 auto;
 }
 .perfil {
   flex-direction: column;
@@ -690,6 +691,8 @@ footer a img:hover {
 }
 .marquesina {
   background-image: url("../imagenes/marquesina.jpg");
+  background-size: cover;
+  background-position: center;
   height: 180px;
   display: flex;
   align-items: center;
@@ -714,6 +717,8 @@ footer a img:hover {
       #070304
     ),
     url("../imagenes/resistencia-hero.jpg");
+  background-size: cover;
+  background-position: center;
   height: 380px;
   display: flex;
   flex-direction: column;
@@ -721,18 +726,15 @@ footer a img:hover {
 }
 .hero-resistencia > p {
   font-size: 1.5rem;
-  width: min(620px, calc(100% - 80px));
+  width: 50%;
   color: #b0c4c4;
   text-shadow: #003737 2px 2px 2px;
-  margin-left: max(40px, calc((100% - 1200px) / 2));
+  margin-left: 10rem;
   margin-top: 1rem;
-}
-.hero-resistencia .titulo {
-  margin-left: max(40px, calc((100% - 1200px) / 2));
 }
 .hero-resistencia > .linea {
   width: 60px;
-  margin-left: max(40px, calc((100% - 1200px) / 2));
+  margin-left: 10rem;
   margin-top: 1%;
   border-bottom: 1px solid #b0c4c4;
 }
@@ -742,15 +744,11 @@ footer a img:hover {
 .rosa {
   background-color: #c79d94;
 }
-.img-resistencia {
-  width: 50%;
-  min-height: 460px;
-}
-.img-resistencia img {
+.rosa .img-resistencia {
   width: 100%;
-  height: 100%;
-  min-height: 460px;
-  object-fit: cover;
+}
+.img-resistencia {
+  width: 60%;
 }
 .personaje-etiqueta {
   display: flex;
@@ -775,14 +773,15 @@ footer a img:hover {
   opacity: 0.35;
 }
 .personaje-nombre {
-  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  font-size: 3rem;
 }
-.personaje-info {
-  width: 50%;
-  max-width: 700px;
-  padding: clamp(35px, 5vw, 80px);
+.personaje-info,
+.p-suelto {
+  padding: 2%;
   color: #072120;
   flex-direction: column;
+  margin: 0 auto;
+  width: 60%;
 }
 .personaje-info p,
 .asignacion-info p {
@@ -793,9 +792,8 @@ footer a img:hover {
 }
 .p-suelto,
 .h3-suelto {
-  width: min(1200px, calc(100% - 80px));
-  margin: 0 auto;
-  padding: 0 0 50px;
+  width: 100%;
+  padding: 0 2% 2% 2%;
   color: #072120;
   font-variant: normal;
   font-weight: 500;
@@ -803,114 +801,23 @@ footer a img:hover {
 .h3-suelto {
   font-variant: small-caps;
   font-weight: 900;
-  padding: 55px 0 30px;
+  padding: 2%;
   display: block;
 }
 .asignacion {
   flex-direction: column;
   width: 100%;
-  overflow: hidden;
-  border: 1px solid #c79d94;
+  align-items: center;
 }
-.asignaciones-contenedor {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
-  padding: 0 max(40px, calc((100% - 1200px) / 2)) 80px;
+.almendra > .asignacion {
+  padding: 1% 3% 1% 3%;
 }
 .asignacion-info h3 {
+  padding-top: 2%;
   color: #072120;
-  font-size: 1.5rem;
-}
-.asignacion-info {
-  padding: 30px;
 }
 .asignacion-img {
   width: 100%;
-  height: 330px;
-}
-.asignacion-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ---- Hitos de June ---- */
-.hitos-june {
-  padding: 80px 0 90px;
-  color: #072120;
-}
-.hitos-contenedor {
-  width: min(1200px, calc(100% - 80px));
-  margin: 0 auto;
-}
-.hitos-encabezado {
-  max-width: 760px;
-  margin: 0 auto 55px;
-  text-align: center;
-}
-.hitos-etiqueta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: #890620;
-  font-size: 1rem;
-  font-weight: 900;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-.hitos-etiqueta::before,
-.hitos-etiqueta::after {
-  content: "";
-  width: 32px;
-  height: 2px;
-  background-color: #890620;
-  opacity: 0.35;
-}
-.hitos-encabezado h3 {
-  margin: 10px 0 18px;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  line-height: 1.1;
-}
-.hitos-encabezado > p:last-child,
-.hitos-lista p {
-  font-variant: normal;
-  font-weight: 500;
-  line-height: 1.5;
-}
-.hitos-lista {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  list-style: none;
-}
-.hitos-lista li {
-  position: relative;
-  padding: 42px 35px 20px;
-  border-top: 2px solid #97061e;
-  text-align: center;
-}
-.hitos-lista li:not(:last-child) {
-  border-right: 1px solid #946960;
-}
-.hito-numero {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background-color: #97061e;
-  color: #ebd4cb;
-  font-size: 0.85rem;
-  line-height: 40px;
-}
-.hitos-lista h4 {
-  margin-bottom: 12px;
-  color: #890620;
-  font-size: 1.4rem;
 }
 
 /* ---- MENÚ HAMBURGUESA ---- */
@@ -1138,157 +1045,6 @@ footer a img:hover {
 
   .licencia img {
     width: 80px;
-  }
-
-  /* Página Personajes */
-  .img-sombreada {
-    display: none;
-  }
-
-  .color {
-    width: 100%;
-    height: 320px;
-  }
-
-  .intro-pjs h3,
-  .intro-pjs p {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .intro-pjs .linea {
-    margin-left: 20px;
-  }
-
-  .perfiles {
-    width: calc(100% - 40px);
-    gap: 24px;
-  }
-
-  .perfil {
-    width: min(100%, 320px);
-    height: auto;
-    min-height: 380px;
-  }
-
-  .marquesina > p {
-    width: 100%;
-    padding: 20px;
-    font-size: 1.7rem;
-  }
-
-  /* Página Resistencia y Aliados */
-  .hero-resistencia {
-    height: 320px;
-    background-position: 62% center;
-  }
-
-  .hero-resistencia .titulo,
-  .hero-resistencia > p,
-  .hero-resistencia > .linea {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .hero-resistencia > p {
-    width: auto;
-    font-size: 1.2rem;
-  }
-
-  .hero-resistencia + .almendra,
-  .rosa.flex {
-    flex-direction: column;
-  }
-
-  .img-resistencia,
-  .personaje-info,
-  .asignacion {
-    width: 100%;
-  }
-
-  .img-resistencia,
-  .img-resistencia img {
-    min-height: 340px;
-  }
-
-  .personaje-info {
-    padding: 40px 20px;
-  }
-
-  .personaje-etiqueta {
-    text-align: center;
-  }
-
-  .personaje-nombre {
-    text-align: center;
-  }
-
-  .p-suelto,
-  .h3-suelto,
-  .hitos-contenedor {
-    width: calc(100% - 40px);
-  }
-
-  .asignaciones-contenedor {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 0 20px 55px;
-  }
-
-  .asignacion-img {
-    height: 280px;
-  }
-
-  .hitos-june {
-    padding: 60px 0;
-  }
-
-  .hitos-lista {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .hitos-lista li:not(:last-child) {
-    border-right: none;
-  }
-}
-
-/* ---- Tablets ---- */
-@media screen and (min-width: 481px) and (max-width: 900px) {
-  .contenido-texto h3,
-  .contenido-texto h2,
-  .contenido-texto p,
-  .texto-la-serie h3,
-  .texto-la-serie p,
-  .intro-pjs h3,
-  .intro-pjs p {
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-
-  .contenido-texto .linea,
-  .texto-la-serie .linea,
-  .intro-pjs .linea {
-    margin-left: 40px;
-  }
-
-  .perfiles,
-  .personajes-imagen,
-  .novedades-imagen {
-    width: calc(100% - 60px);
-  }
-
-  .personaje-info {
-    padding: 40px;
-  }
-
-  .asignaciones-contenedor {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  .hitos-contenedor {
-    width: calc(100% - 60px);
   }
 }
 /* ---- 1920px ---- */
