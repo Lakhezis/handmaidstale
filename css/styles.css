@@ -34,7 +34,7 @@ ul {
   flex-wrap: wrap;
   display: flex;
   column-gap: 2rem;
-  align-items: center;
+  align-items: left;
   margin: 0;
   padding: 0;
 }
@@ -125,7 +125,7 @@ nav ul li > ul {
   z-index: 10;
   flex-direction: column;
   min-width: 300px;
-  align-items: flex-start;
+  align-items: left;
 }
 
 /* Segundo nivel */
@@ -703,6 +703,121 @@ footer a img:hover {
   color: #946960;
   font-variant: normal;
   font-size: 36px;
+}
+/*---- PÁGINA RESISTENCIA Y ALIADOS ----*/
+.hero-resistencia {
+  background-image:
+    linear-gradient(to left, #ffffff00, #ffffff00, #ffffff00, #150609, #070304),
+    linear-gradient(
+      to right,
+      #ffffff00,
+      #ffffff00,
+      #ffffff00,
+      #150609,
+      #070304
+    ),
+    url("../imagenes/resistencia-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-resistencia > p {
+  font-size: 1.5rem;
+  width: 50%;
+  color: #b0c4c4;
+  text-shadow: #003737 2px 2px 2px;
+  margin-left: 10rem;
+  margin-top: 1rem;
+}
+.hero-resistencia > .linea {
+  width: 60px;
+  margin-left: 10rem;
+  margin-top: 1%;
+  border-bottom: 1px solid #b0c4c4;
+}
+.almendra {
+  background-color: #ebd4cb;
+}
+.rosa {
+  background-color: #c79d94;
+}
+.rosa .img-resistencia {
+  width: 100%;
+}
+.img-resistencia {
+  width: 60%;
+}
+.personaje-etiqueta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #890620;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.personaje-etiqueta::before,
+.personaje-etiqueta::after {
+  content: "";
+  display: block;
+  margin: 6px;
+  width: 28px;
+  height: 2px;
+  background: #890620;
+  opacity: 0.35;
+}
+.personaje-nombre {
+  font-size: 3rem;
+}
+.personaje-info,
+.p-suelto {
+  padding: 2%;
+  color: #072120;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 60%;
+}
+.personaje-info p,
+.asignacion-info p {
+  font-variant: normal;
+  font-weight: 500;
+  margin-top: 1rem;
+  color: #072120;
+}
+.p-suelto,
+.h3-suelto {
+  width: 100%;
+  padding: 0 2% 2% 2%;
+  color: #072120;
+  font-variant: normal;
+  font-weight: 500;
+}
+.h3-suelto {
+  font-variant: small-caps;
+  font-weight: 900;
+  padding: 2%;
+  display: block;
+}
+.asignacion {
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.almendra > .asignacion {
+  padding: 1% 3% 1% 3%;
+}
+.asignacion-info h3 {
+  padding-top: 2%;
+  color: #072120;
+}
+.asignacion-img {
+  width: 100%;
 }
 
 /* ---- MENÚ HAMBURGUESA ---- */
