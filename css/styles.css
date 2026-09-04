@@ -491,7 +491,9 @@ button {
   text-align: center;
   background-color: #ebd4cb;
   border: 1px solid #003737;
+  justify-content: space-between;
 }
+
 .noticia img {
   width: 300px;
   height: 180px;
