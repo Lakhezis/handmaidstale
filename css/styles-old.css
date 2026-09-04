@@ -726,19 +726,7 @@ button {
   flex-direction: column;
   justify-content: center;
 }
-.hero-opresores {
-  background-image:
-    linear-gradient(to left, #ffffff00, #00373799),
-    linear-gradient(to right, #ffffff00, #00373799),
-    url("../imagenes/opresores-hero.webp");
-  height: 380px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hero-resistencia > p,
-.hero-opresores > p {
+.hero-resistencia > p {
   font-size: 1.5rem;
   width: min(620px, calc(100% - 80px));
   color: #b0c4c4;
@@ -746,12 +734,10 @@ button {
   margin-left: max(40px, calc((100% - 1200px) / 2));
   margin-top: 1rem;
 }
-.hero-resistencia .titulo,
-.hero-opresores .titulo {
+.hero-resistencia .titulo {
   margin-left: max(40px, calc((100% - 1200px) / 2));
 }
-.hero-resistencia > .linea,
-.hero-opresores > .linea {
+.hero-resistencia > .linea {
   width: 60px;
   margin-left: max(40px, calc((100% - 1200px) / 2));
   margin-top: 1%;
@@ -763,15 +749,6 @@ button {
 .rosa {
   background-color: #c79d94;
 }
-.celeste {
-  background-color: #b0c4c4;
-}
-.teal H2,
-.teal H3,
-.teal {
-  color: #ebd4cb;
-}
-
 .img-resistencia {
   width: 50%;
   min-height: 460px;
@@ -814,7 +791,6 @@ button {
   color: #072120;
   flex-direction: column;
 }
-
 .personaje-info p,
 .asignacion-info p {
   font-variant: normal;
@@ -822,21 +798,16 @@ button {
   margin-top: 1rem;
   color: #072120;
 }
-
 .p-suelto,
 .h3-suelto {
   width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
   padding: 0 0 50px;
   color: #072120;
   font-variant: normal;
   font-weight: 500;
 }
-.p-suelto {
-  margin-left: 5%;
-  padding-top: 1%;
-}
 .h3-suelto {
-  margin: 0 auto;
   font-variant: small-caps;
   font-weight: 900;
   padding: 55px 0 30px;
@@ -885,7 +856,6 @@ button {
   margin: 0 auto 55px;
   text-align: center;
 }
-
 .hitos-etiqueta {
   display: flex;
   align-items: center;
@@ -905,20 +875,11 @@ button {
   background-color: #890620;
   opacity: 0.35;
 }
-.opresores {
-  color: #b0c4c4;
-}
-.opresores::before,
-.opresores::after {
-  background-color: #b0c4c4;
-}
-
 .hitos-encabezado h3 {
   margin: 10px 0 18px;
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.1;
 }
-
 .hitos-encabezado > p:last-child,
 .hitos-lista p {
   font-variant: normal;
@@ -957,11 +918,6 @@ button {
   margin-bottom: 12px;
   color: #890620;
   font-size: 1.4rem;
-}
-.sobre-teal,
-.personaje-info .sobre-teal,
-.hitos-lista .sobre-teal {
-  color: #b0c4c4;
 }
 
 /*-----------------------------------------------------------------------*/
