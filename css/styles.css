@@ -1644,6 +1644,7 @@ button {
     width: auto;
     margin-left: 20px;
     margin-right: 20px;
+    text-shadow: #150609 1px 1px 4px;
   }
 
   .subtitulo {
@@ -1841,26 +1842,35 @@ button {
     font-size: 1.7rem;
   }
 
-  /* Página Resistencia y Aliados */
-  .hero-resistencia {
+  /* Páginas de personajes de: Resistencia y Aliados y de Régimen de Gilead*/
+  .hero-resistencia,
+  .hero-opresores {
     height: 320px;
     background-position: 62% center;
   }
 
   .hero-resistencia .titulo,
   .hero-resistencia > p,
-  .hero-resistencia > .linea {
+  .hero-resistencia > .linea,
+  .hero-opresores .titulo,
+  .hero-opresores > p,
+  .hero-opresores > .linea {
     margin-left: 20px;
     margin-right: 20px;
   }
 
-  .hero-resistencia > p {
+  .hero-resistencia > p,
+  .hero-opresores > p {
     width: auto;
     font-size: 1.2rem;
   }
 
   .hero-resistencia + .almendra,
   .rosa.flex {
+    flex-direction: column;
+  }
+  .hero-opresores + .celeste,
+  .teal.flex {
     flex-direction: column;
   }
 
