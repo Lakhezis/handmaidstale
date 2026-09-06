@@ -1000,7 +1000,8 @@ button {
   opacity: 0.65;
 }
 
-.hero-gilead {
+.hero-gilead,
+.hero-temporadas {
   min-height: 400px;
   display: flex;
   align-items: center;
@@ -1009,6 +1010,12 @@ button {
     url("../imagenes/gilead-hero.webp");
   background-size: cover;
   background-position: center;
+}
+
+.hero-temporadas {
+  background-image:
+    linear-gradient(to right, #150609, #070304e8, #07212022, #ffffff00),
+    url("../imagenes/temporadas.webp");
 }
 
 .hero-gilead-contenido {
