@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const toggleBtn = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu_bar');
+    const compactMenu = window.matchMedia('(max-width: 1200px), (max-width: 1366px) and (hover: none)');
 
     if (toggleBtn && menu) {
 
@@ -41,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             /* Solo funciona como click en celular */
 
-            if (window.innerWidth <= 480) {
+            if (compactMenu.matches) {
                 dropdown.classList.toggle('open');
             }
 
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         button.addEventListener('click', function () {
 
-            if (window.innerWidth <= 480) {
+            if (compactMenu.matches) {
                 submenu.classList.toggle('open');
             }
 
@@ -66,4 +67,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
+    compactMenu.addEventListener('change', function () {
+        toggleBtn?.classList.remove('active');
+        menu?.classList.remove('active');
+        document.querySelectorAll('nav .open').forEach(function (item) {
+            item.classList.remove('open');
+        });
+    });
 });
