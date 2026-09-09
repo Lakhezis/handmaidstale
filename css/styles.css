@@ -427,7 +427,7 @@ button {
   min-height: 350px;
   background-image:
     linear-gradient(to right, #ffffff00, #ffffff00, #072120, #072120),
-    url("../imagenes/gilead.jpg");
+    url("../imagenes/gilead.webp");
   padding: 10px;
   background-size: cover;
   background-position: left center;
@@ -546,7 +546,7 @@ button {
 /*-----------------------------------------------------------------------*/
 /* ---- PÁGINA - LA SERIE ---- */
 .hero-serie {
-  background-image: url("../imagenes/la-serie-hero.jpg");
+  background-image: url("../imagenes/la-serie-hero.webp");
   height: 380px;
 }
 .titulo-la-serie {
@@ -609,7 +609,7 @@ button {
 .img-sombreada {
   background-image:
     linear-gradient(to right, #ffffff00, #003737),
-    url("../imagenes/esposas_ceremonia_nacimiento.jpg");
+    url("../imagenes/esposas_ceremonia_nacimiento.webp");
   width: 60%;
   height: 380px;
 }
@@ -690,7 +690,7 @@ button {
   hyphens: auto;
 }
 .marquesina {
-  background-image: url("../imagenes/marquesina.jpg");
+  background-image: url("../imagenes/marquesina.webp");
   height: 180px;
   display: flex;
   align-items: center;
@@ -714,7 +714,7 @@ button {
       #150609,
       #070304
     ),
-    url("../imagenes/resistencia-hero.jpg");
+    url("../imagenes/resistencia-hero.webp");
   height: 380px;
   display: flex;
   flex-direction: column;
