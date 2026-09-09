@@ -145,7 +145,8 @@ nav ul li > ul a {
 
 /* Desktop: abrir con hover */
 
-@media screen and (min-width: 1201px) and (hover: hover), screen and (min-width: 1367px) {
+@media screen and (min-width: 1201px) and (hover: hover),
+  screen and (min-width: 1367px) {
   nav .dropdown:hover > ul {
     display: flex;
   }
@@ -157,7 +158,8 @@ nav ul li > ul a {
 
 /* ---- Dropdowns en celulares y tablets ---- */
 
-@media screen and (max-width: 1200px), screen and (max-width: 1366px) and (hover: none) {
+@media screen and (max-width: 1200px),
+  screen and (max-width: 1366px) and (hover: none) {
   nav ul li > ul {
     position: static;
     width: 100%;
@@ -559,20 +561,18 @@ button {
 }
 .texto-la-serie {
   width: 60%;
+  padding-top: 20px;
 }
-.texto-la-serie h3 {
-  margin: 30px 100px;
+.texto-la-serie h3,
+.texto-la-serie p {
+  margin: 20px 100px;
 }
 .texto-la-serie .linea {
   margin-left: 100px;
-  margin-top: -20px;
+  margin-top: -10px;
   margin-bottom: 40px;
 }
-.texto-la-serie p {
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 10px;
-}
+
 .imagen-la-serie {
   width: 50%;
 }
@@ -594,7 +594,6 @@ button {
 .cierre-serie {
   height: auto;
   background-color: #b0c4c4;
-  padding: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -602,8 +601,8 @@ button {
   width: 100%;
 }
 .cierre-serie .imagen-la-serie {
+  align-self: center;
   width: 85%;
-  margin: auto;
 }
 /*---- PÁGINA PERSONAJES ----*/
 
@@ -1740,11 +1739,7 @@ button {
   }
 
   .cierre-serie .imagen-la-serie {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .cierre-serie .imagen-la-serie img {
+    margin: 0;
     width: 100%;
   }
 
@@ -2098,7 +2093,6 @@ html {
     font-size: 1.2rem;
   }
 
-
   #menu_bar {
     max-height: calc(100dvh - 100%);
     overflow-y: auto;
@@ -2114,14 +2108,18 @@ html {
     padding: 0 30px;
   }
 
-  #menu-toggle { margin: 0; }
+  #menu-toggle {
+    margin: 0;
+  }
 
   .contenido-texto,
   .contenido-imagen,
   .texto-la-serie,
   .imagen-la-serie,
   .personaje-info,
-  .img-resistencia { min-width: 0; }
+  .img-resistencia {
+    min-width: 0;
+  }
 
   .contenido-texto h2,
   .contenido-texto h3,
@@ -2136,55 +2134,112 @@ html {
 
   .contenido-texto .linea,
   .texto-la-serie .linea,
-  .intro-pjs .linea { margin-left: 30px; }
+  .intro-pjs .linea {
+    margin-left: 30px;
+  }
 
-  .personaje-info { padding: 35px 30px; }
-  .personaje-etiqueta { text-align: center; overflow-wrap: anywhere; }
+  .personaje-info {
+    padding: 35px 30px;
+  }
+  .personaje-etiqueta {
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
   .personaje-etiqueta::before,
-  .personaje-etiqueta::after { flex-shrink: 0; }
-  .p-suelto { margin-left: auto; margin-right: auto; }
+  .personaje-etiqueta::after {
+    flex-shrink: 0;
+  }
+  .p-suelto {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .personajes-imagen {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .personaje img { width: 100%; height: auto; }
+  .personaje img {
+    width: 100%;
+    height: auto;
+  }
 
   .novedades-imagen {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .noticia { min-width: 0; }
-  .noticia img { width: 100%; height: auto; }
+  .noticia {
+    min-width: 0;
+  }
+  .noticia img {
+    width: 100%;
+    height: auto;
+  }
 
   .gilead-texto {
     width: 50%;
     margin-left: 50%;
     padding: 20px;
   }
-  .gilead-texto .aspectos { max-width: 100%; text-align: center; }
+  .gilead-texto .aspectos {
+    max-width: 100%;
+    text-align: center;
+  }
 
-  .perfiles { gap: 30px; }
-  .perfil { height: auto; min-height: 380px; }
+  .perfiles {
+    gap: 30px;
+  }
+  .perfil {
+    height: auto;
+    min-height: 380px;
+  }
   .color > h2,
   .color > h3,
-  .color > .linea { margin-left: 30px; }
-  .marquesina > p { width: 75%; padding-left: 30px; }
+  .color > .linea {
+    margin-left: 30px;
+  }
+  .marquesina > p {
+    width: 75%;
+    padding-left: 30px;
+  }
 
-  .casta-card { padding: 30px; min-height: auto; }
-  .roles-masculinos-lista article { padding: 30px; min-width: 0; }
-  .tias-dossier { grid-template-columns: 1fr; }
-  .tias-dossier-contenido { border-left: none; }
+  .casta-card {
+    padding: 30px;
+    min-height: auto;
+  }
+  .roles-masculinos-lista article {
+    padding: 30px;
+    min-width: 0;
+  }
+  .tias-dossier {
+    grid-template-columns: 1fr;
+  }
+  .tias-dossier-contenido {
+    border-left: none;
+  }
   .tias-dossier-titulo,
-  .tias-dossier-contenido > div { padding: 30px; }
-  .mayday-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tias-dossier-contenido > div {
+    padding: 30px;
+  }
+  .mayday-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .mayday-grid article:nth-child(3) {
     border-left: none;
     border-top: 1px solid #b0c4c4;
   }
-  .mayday-grid article:nth-child(4) { border-top: 1px solid #b0c4c4; }
-  .hitos-lista li { padding-left: 20px; padding-right: 20px; }
+  .mayday-grid article:nth-child(4) {
+    border-top: 1px solid #b0c4c4;
+  }
+  .hitos-lista li {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
-  .licencia { flex-wrap: wrap; justify-content: center; }
-  .texto-pie { text-align: center; }
+  .licencia {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .texto-pie {
+    text-align: center;
+  }
 }
 
 /* ---- Columnas de lectura en tablets verticales y teléfonos horizontales ---- */
@@ -2195,7 +2250,9 @@ html {
   .hero-resistencia + .almendra,
   .hero-opresores + .celeste,
   .rosa.flex,
-  .teal.flex { flex-direction: column; }
+  .teal.flex {
+    flex-direction: column;
+  }
 
   .contenido-texto,
   .contenido-imagen,
@@ -2209,20 +2266,48 @@ html {
     max-width: none;
   }
 
-  .contenido-imagen img { width: calc(100% - 60px); margin: 20px auto; }
-  .img-resistencia { min-height: 0; }
-  .img-resistencia img { height: 420px; min-height: 0; }
-  .imagen-la-serie img { max-height: 480px; }
-  .personaje-nombre { font-size: 2.6rem; }
+  .contenido-imagen img {
+    width: calc(100% - 60px);
+    margin: 20px auto;
+  }
+  .img-resistencia {
+    min-height: 0;
+  }
+  .img-resistencia img {
+    height: 420px;
+    min-height: 0;
+  }
+  .imagen-la-serie img {
+    max-height: 480px;
+  }
+  .personaje-nombre {
+    font-size: 2.6rem;
+  }
 
-  .gilead-texto { width: 65%; margin-left: 35%; }
-  .novedades-imagen { grid-template-columns: 1fr; max-width: 600px; }
-  .noticia img { width: 100%; max-height: 340px; object-fit: cover; }
+  .gilead-texto {
+    width: 65%;
+    margin-left: 35%;
+  }
+  .novedades-imagen {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+  .noticia img {
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+  }
   .castas-grid,
   .roles-masculinos-lista,
-  .referencia-doble { grid-template-columns: 1fr; }
-  .asignacion-info { padding: 24px; }
-  .hero-gilead h1 { font-size: 3.5rem; }
+  .referencia-doble {
+    grid-template-columns: 1fr;
+  }
+  .asignacion-info {
+    padding: 24px;
+  }
+  .hero-gilead h1 {
+    font-size: 3.5rem;
+  }
 }
 
 /* ---- Menú accesible con poca altura disponible ---- */
@@ -2230,9 +2315,15 @@ html {
   .asignaciones-contenedor,
   .hitos-lista,
   .tias-dossier-contenido,
-  .mayday-grid { grid-template-columns: 1fr; }
-  .hitos-lista { gap: 35px; }
-  .hitos-lista li:not(:last-child) { border-right: none; }
+  .mayday-grid {
+    grid-template-columns: 1fr;
+  }
+  .hitos-lista {
+    gap: 35px;
+  }
+  .hitos-lista li:not(:last-child) {
+    border-right: none;
+  }
   .tias-dossier-contenido > div + div {
     border-left: none;
     border-top: 1px solid #003737;
@@ -2245,13 +2336,23 @@ html {
     width: 85%;
     margin-left: 15%;
   }
-  .img-sombreada { display: none; }
-  .color { width: 100%; }
-  .hitos-june { padding: 60px 0; }
+  .img-sombreada {
+    display: none;
+  }
+  .color {
+    width: 100%;
+  }
+  .hitos-june {
+    padding: 60px 0;
+  }
 }
 
 @media screen and (min-width: 481px) and (max-width: 1200px) and (max-height: 600px) {
-  header .logo { width: 150px; }
+  header .logo {
+    width: 150px;
+  }
   .hero-resistencia,
-  .hero-opresores { height: 300px; }
+  .hero-opresores {
+    height: 300px;
+  }
 }
