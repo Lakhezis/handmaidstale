@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joseph | El Cuento de la Criada</title>
+    <title>Contacto | El Cuento de la Criada</title>
     <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +17,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
   </head>
-  <body class="pagina-personaje pagina-serena">
+  <body class="pagina-gilead pagina-contacto">
     <header class="flex">
       <div>
         <a href="index.html"
@@ -86,136 +86,91 @@
             </ul>
           </li>
           <li><a href="temporadas.html">Temporadas</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="contacto.html" aria-current="page">Contacto</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <section class="hero-opresores">
-        <h1 class="titulo">El Régimen De Gilead</h1>
-        <p>Comandante Joseph Lawrence</p>
-        <div class="linea"></div>
-      </section>
-      <section class="celeste flex">
-        <div class="img-resistencia">
-          <img
-            src="imagenes/joseph.webp"
-            alt="Retrato del comandante Joseph Lawrence"
-          />
-        </div>
-        <div class="personaje-info flex">
-          <h2 class="personaje-etiqueta">Joseph Lawrence</h2>
-          <h3 class="personaje-nombre">
-            Arquitecto de Gilead y aliado intermitente de Mayday
-          </h3>
-          <p>
-            Joseph Lawrence es uno de los personajes principales de la serie. Es
-            interpretado por <strong>Bradley Whitford</strong>.
+      <section class="hero-contacto" aria-labelledby="titulo-contacto">
+        <div class="hero-gilead-contenido">
+          <p class="contacto-etiqueta">Voces que se encuentran</p>
+          <h1 id="titulo-contacto">Contacto</h1>
+          <p class="hero-gilead-bajada">
+            Compartí tus ideas, comentarios o preguntas sobre El Cuento de la
+            Criada.
           </p>
-          <p>
-            Su inteligencia, su humor astuto y sus gestos ocasionales de
-            amabilidad hacen que su posición dentro de Gilead resulte ambigua y
-            difícil de anticipar.
-          </p>
+          <div class="linea-gilead" aria-hidden="true"></div>
         </div>
       </section>
-      <section class="teal flex">
-        <div class="personaje-info flex">
-          <h3>Rol y aportaciones a Gilead</h3>
-          <p class="sobre-teal">
-            Lawrence es reconocido como el «arquitecto de la economía» de la
-            República de Gilead.
-          </p>
-          <p class="sobre-teal">
-            También es el creador intelectual de las Colonias, los campos de
-            trabajos forzados destinados a castigar a quienes el régimen
-            considera disidentes.
-          </p>
-          <p class="sobre-teal">
-            A pesar de su responsabilidad en la estructura del Estado, Lawrence
-            experimenta un profundo arrepentimiento y colabora de manera
-            intermitente con Mayday. June es asignada a su residencia como
-            criada bajo el nombre de Dejoseph.
-          </p>
-        </div>
-        <div class="img-resistencia">
-          <img
-            src="imagenes/joseph-gilead.webp"
-            alt="Joseph Lawrence como arquitecto de la economía de Gilead"
-          />
-        </div>
-      </section>
-      <section class="celeste">
-        <h3 class="h3-suelto">Familia, alianzas y sacrificio</h3>
-      </section>
-      <section class="celeste flex asignaciones-contenedor">
-        <div class="asignacion flex">
-          <div class="asignacion-img">
+      <section class="contacto-seccion" aria-labelledby="titulo-formulario">
+        <div class="gilead-contenedor contacto-columnas">
+          <figure class="contacto-imagen gilead-imagen">
             <img
-              src="imagenes/joseph-eleanor.webp"
-              alt="Joseph Lawrence junto a su primera esposa Eleanor"
+              src="imagenes/formulario.webp"
+              alt="Retrato de June Osborne"
+              loading="lazy"
             />
-          </div>
-          <div class="asignacion-info">
-            <h3>Eleanor Lawrence</h3>
-            <p>
-              Su primera esposa, Eleanor, padecía una severa inestabilidad
-              mental y terminó suicidándose mediante una sobredosis de sus
-              medicamentos.
-            </p>
+            <figcaption>Una historia que invita a conversar.</figcaption>
+          </figure>
+          <div class="contacto-formulario">
+            <div class="gilead-pagina-texto contacto-encabezado">
+              <p class="gilead-etiqueta">Más allá de Gilead</p>
+              <h2 id="titulo-formulario">Dejanos tu mensaje</h2>
+              <p>
+                Este espacio también es tuyo. Nos gustaría conocer tu mirada
+                sobre la serie.
+              </p>
+            </div>
+            <form id="formulario-contacto" aria-describedby="contacto-aviso">
+              <label for="nombre">Nombre</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                autocomplete="name"
+                maxlength="100"
+                required
+              />
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                maxlength="254"
+                required
+              />
+              <label for="mensaje">Mensaje</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="6"
+                maxlength="5000"
+                required
+              ></textarea>
+              <p id="contacto-aviso">
+                Formulario de demostración: los mensajes no se envían.
+              </p>
+              <button class="saber-mas" type="submit">Enviar</button>
+              <p id="contacto-estado" role="status" aria-live="polite"></p>
+            </form>
           </div>
         </div>
-        <div class="asignacion flex">
-          <div class="asignacion-img">
-            <img
-              src="imagenes/joseph-naomi.webp"
-              alt="Joseph Lawrence junto a Naomi Putnam"
-            />
-          </div>
-          <div class="asignacion-info">
-            <h3>Naomi y el destino final</h3>
-            <p>
-              Tras la muerte de Eleanor y un cambio en las circunstancias
-              políticas, Joseph contrajo matrimonio con Naomi Putnam.
-            </p>
-            <p>
-              En la última temporada se sacrificó al sabotear un avión lleno de
-              líderes del régimen para asegurar la victoria de Mayday.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="hitos-june teal">
-        <div class="hitos-contenedor">
-          <div class="hitos-encabezado opresores">
-            <p class="hitos-etiqueta opresores">Momentos decisivos</p>
-            <h3>Hitos de la contradicción de Lawrence</h3>
-          </div>
-          <ol class="hitos-lista">
-            <li>
-              <span class="hito-numero">01</span>
-              <h4 class="sobre-teal">Arquitecto del régimen</h4>
-              <p class="sobre-teal">
-                Diseña la economía de Gilead y crea el sistema de las Colonias.
-              </p>
-            </li>
-            <li>
-              <span class="hito-numero">02</span>
-              <h4 class="sobre-teal">Colaboración con Mayday</h4>
-              <p class="sobre-teal">
-                Su arrepentimiento lo lleva a ayudar intermitentemente a la
-                resistencia desde una posición de poder.
-              </p>
-            </li>
-            <li>
-              <span class="hito-numero">03</span>
-              <h4 class="sobre-teal">Sacrificio final</h4>
-              <p class="sobre-teal">
-                Hace estallar el avión de los comandantes y muere en la
-                operación que favorece la victoria de Mayday.
-              </p>
-            </li>
-          </ol>
+        <div
+          class="gilead-contenedor contacto-datos"
+          aria-label="Datos de contacto"
+        >
+          <p>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <span>+54 11 0000-0000</span>
+          </p>
+          <p>
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>contacto@handmaidstale.example</span>
+          </p>
+          <p class="contacto-aclaracion">
+            Datos de contacto ficticios para este sitio educativo.
+          </p>
         </div>
       </section>
     </main>
@@ -270,5 +225,6 @@
       </p>
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/contacto.js"></script>
   </body>
 </html>
